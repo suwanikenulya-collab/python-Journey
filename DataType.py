@@ -64,3 +64,15 @@ else:
     print ("you are need to do the test again.")
 
 
+#for loop
+fruits = ["apple", "banana", "cherry"]
+
+for i in fruits:
+    print(i + "pie")
+
+for num in range (8, 100, 2):
+    print(num)
+
+for number in range (1, 100):
+    if num % 3== 0:
+        print (number)
