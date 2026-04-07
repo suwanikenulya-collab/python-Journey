@@ -10,6 +10,7 @@ print("\nYour full name is:", fname + " " + lname)
 # Using f-strings (modern Python way)
 print(f"You can also write your name as {fname} {lname}")
 
+
 print("\n- Additional Info -")
 
 # More inputs
