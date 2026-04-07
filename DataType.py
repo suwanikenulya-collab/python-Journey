@@ -27,3 +27,40 @@ else:
 
     #loops
 
+#if statement
+score = input("enter a score")
+score = int(score)
+
+if score >= 90:
+    print ("the score is A")
+elif score >=80:
+    print ("the score is B")
+elif score >=70:
+    print ("the score is C")
+elif score >=60:
+    print ("the score is D")
+else:
+    print ("the score is F")
+
+#nested loop -if statement
+
+
+mark= input("enter a mark")
+mark = int(mark)
+
+if mark >= 90:
+    age= int (input("enter a age"))
+    if age <18:
+        print ("the age is less than or equal to 18")
+    else:
+        print ("the age is greater than or equal to 18")
+elif mark >= 80:
+    age = int(input("enter a age"))
+    if age < 18:
+        print("the age is less than or equal to 18")
+    else:
+        print("the age is greater than or equal to 18")
+else:
+    print ("you are need to do the test again.")
+
+
