@@ -14,6 +14,8 @@ word =["apple","banana","pinnaple"]
 #example if the word is hacker "_"
 
 secret_word = random.choice(word)
+print(secret_word)
+print("you get 5 guesses.")
 display_word=[]
 for letter in secret_word:
     display_word += "_"
@@ -27,13 +29,31 @@ guess  = input("Guess the letter: ").lower()
 
 print(guess)
 
-for Position in range(len(secret_word)):
-    letter = secret_word[Position]
 
-    if letter == guess:
-        display_word[Position] = letter
+num=0
+game_over = False
 
-print(display_word)
+while not game_over:
+    guess = input("Guess the letter: ").lower()
+
+    for Position in range(len(secret_word)):
+        letter = secret_word[Position]
+
+        if letter == guess:
+            display_word[Position] = letter
+    if guess not in secret_word:
+        num +=1
+        if num >= 5:
+            print("You loser!!!!!!!")
+            game_over = True
+        game_over = True
+
+
+    print(display_word)
+
+    if "_" not in display_word:
+        print("You win!")
+        game_over = True
 
 
 
