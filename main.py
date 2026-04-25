@@ -1,5 +1,5 @@
-import requests
-from bs4 import BeautifulSoup
+import requests #send HTTP requests
+from bs4 import BeautifulSoup #Imports BeautifulSoup from the bs4 library. This is used to parse HTML (read and navigate webpage structure).
 
 def get_page(url):
     try:
@@ -10,7 +10,7 @@ def get_page(url):
         response = requests.get(url, headers=headers)
         response.raise_for_status()  # raises error if request fails
 
-        soup = BeautifulSoup(response.content, 'html.parser')
+        soup = BeautifulSoup(response.content, 'html.parser') #Takes the raw HTML (response.content) and parses it.
 
         if soup.title:
             print(soup.title.string)
