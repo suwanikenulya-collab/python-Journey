@@ -19,6 +19,7 @@ print("the program is about to start.")
 time.sleep(5)
 function(choice)
 
+
 #gets a practice on functions
 
 ip = input("what is the target IP address? ")
