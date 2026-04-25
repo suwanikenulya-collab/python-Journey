@@ -14,6 +14,7 @@ if any(char.islower() for char in pwd):
 if len(pwd) >= 8:
     score =score+1
 
+
 special_chars = "!@#$%^&*"
 if any(char in special_chars for char in pwd):
     score += 1
