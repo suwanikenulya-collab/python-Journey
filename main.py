@@ -12,6 +12,14 @@ def get_page(url):
 
         soup = BeautifulSoup(response.content, 'html.parser') #Takes the raw HTML (response.content) and parses it.
 
+        tag = soup.find_all("a")
+
+        for t in tag:
+            url2=t.get("href")
+            print (url2)
+
+        #print(tag)
+
         if soup.title:
             print(soup.title.string)
         else:
