@@ -11,6 +11,8 @@ Learning Python + Cybersecurity scripting step by step.
 ## Projects
 - Calculator
 - Number Guessing Game
+- link_scrapper
+- web spider
 
 ## Future Goals
 - Port Scanner
