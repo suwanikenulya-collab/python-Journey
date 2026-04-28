@@ -1,33 +1,40 @@
-from time import sleep
-import time
-choice=input("enter your choice")
-choice=int(choice)
+# TRY / EXCEPT NOTES (Error Handling in Python)
 
-def function(choice):
-    for num in range(1, choice):
-        if num % 3 == 0 and num % 5 == 0:
-            print("fizzbuzz")
-        elif num % 3 == 0:
-            print("fizz")
-        elif num % 5 == 0:
-            print("buzz")
-        else:
-            print(num)
+# Basic structure
+try:
+    x = int(input("Enter a number: "))
+    print(10 / x)
 
+except ValueError:
+    print("Invalid input! Please enter a number.")
 
-print("the program is about to start.")
-time.sleep(5)
-function(choice)
+except ZeroDivisionError:
+    print("You cannot divide by zero.")
+
+except Exception as e:
+    print("Something went wrong:", e)
 
 
-#gets a practice on functions
-
-ip = input("what is the target IP address? ")
-
-def nmap(ip):
-    print("attacking {ip}")
-
-nmap(ip)
-
+# ELSE block (runs if no error)
+try:
+    num = int(input("Enter another number: "))
+except ValueError:
+    print("Not a number!")
+else:
+    print("Good input:", num)
 
 
+# FINALLY block (always runs)
+try:
+    file = open("test.txt", "r")
+except FileNotFoundError:
+    print("File not found.")
+finally:
+    print("Execution completed.")
+
+
+# Why this matters in cybersecurity:
+# - Prevents crashes in tools
+# - Handles network errors safely
+# - Avoids exposing sensitive system details
+# - Keeps scripts stable during attacks or failures
