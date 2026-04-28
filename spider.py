@@ -1,30 +1,39 @@
+from urllib.parse import urljoin
 import requests
 from bs4 import BeautifulSoup
-from urllib import *
 
-visited_urls= set()
+visited_urls = set()
 
 def spider_urls(url, keywords):
+    if url in visited_urls:
+        return
+
+    print("Visiting:", url)
+    visited_urls.add(url)
+
     try:
         response = requests.get(url)
+        response.raise_for_status()
     except:
         print(f"Request failed {url}")
         return
 
-    if response.status_code == 200:
-        soup = BeautifulSoup(response.content, 'html.parser')
+    soup = BeautifulSoup(response.content, 'html.parser')
 
-        links = soup.find_all('a')
-        urls= []
-        for tag in links:
-            href = tag.get("href")
-            if href is not None and href !="":
-                urls.append(href)
-        print(urls)
+    links = soup.find_all('a')
+
+    for tag in links:
+        href = tag.get("href")
+
+        if href:
+            full_url = urljoin(url, href)
+
+            if full_url not in visited_urls:
+                print(full_url)
+                spider_urls(full_url, keywords)
 
 
+url = input("Enter the URL: ")
+keywords = input("Enter keywords: ")
 
-
-url=input("enter the url you want to scrap. ")
-keywords = input("enter the keywords you want to scrap. ")
 spider_urls(url, keywords)
