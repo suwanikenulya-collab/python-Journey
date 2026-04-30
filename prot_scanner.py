@@ -1,31 +1,29 @@
 import socket
+from datetime import datetime #use to get current date and time.
 
-def scan_port(target, port):
+target = input("Enter the target IP address: ")
+
+def port_scan(target): #takes target as the input and encapsulates scanning logic
+    #error handling
     try:
-        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        sock.settimeout(1)
+        ip = socket.gethostbyname(target) #coverts domain-> IP address
+        print(f"Scanning the target {ip}")
+        print("Time started:", datetime.now())
 
-        result = sock.connect_ex((target, port))
+        for port in range(30, 90):
+            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #creates a socket object. AF_INET->IPV4 and SOCK_STREAM-> TCP connection
+            sock.settimeout(1)
 
-        if result == 0:
-            print(f"Port {port} is OPEN")
-        else:
-            print(f"Port {port} is CLOSED")
+            result = sock.connect_ex((ip, port))
+            if result == 0:
+                print(f"Port {port} is open")
 
-        sock.close()
+            sock.close()
 
-    except Exception as e:
-        print(f"Error scanning port {port}: {e}")
+    except socket.gaierror:
+        print("Hostname could not be resolved")
 
+    except socket.error:
+        print("Couldn't connect to server")
 
-def main():
-    target = input("Enter target (IP or domain): ")
-
-    print(f"\nScanning target: {target}\n")
-
-    for port in range(20, 1025):  # common ports
-        scan_port(target, port)
-
-
-if __name__ == "__main__":
-    main()
+port_scan(target)
