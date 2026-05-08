@@ -24,17 +24,5 @@ else:
     print("Good input:", num)
 
 
-# FINALLY block (always runs)
-try:
-    file = open("test.txt", "r")
-except FileNotFoundError:
-    print("File not found.")
-finally:
-    print("Execution completed.")
 
 
-# Why this matters in cybersecurity:
-# - Prevents crashes in tools
-# - Handles network errors safely
-# - Avoids exposing sensitive system details
-# - Keeps scripts stable during attacks or failures

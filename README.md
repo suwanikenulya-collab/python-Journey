@@ -32,6 +32,7 @@ This repository contains my daily learning progress in Python, including:
 - 🌐 Flask Intro App (basic web server + routing)
 - 🔗 Dynamic routes using `/hello/<name>`
 
+
 ---
 
 ## 🚀 Future Goals
