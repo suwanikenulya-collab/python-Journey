@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>login page </title>
+</head>
+
+<body>
+
+    <h1>login page</h1>
+
+    <p>
+        Hello! My name is Suwani.
+        I am a Computer Science student.
+    </p>
+
+    <form method="POST" action="/about">
+
+        <input type="text" name="xss_input">
+        <input type="text" name="username">
+
+        <input type="submit" value="submit">
+
+    </form>
+
+    <div>{{ user_input | safe }}</div> #safe-> made a vulnerability
+
+    <p>
+        I love learning Python, cybersecurity,
+        cloud computing, and web development.
+    </p>
+
+    <p>
+        My hobbies are listening to music,
+        trying new foods, and coding.
+    </p>
+
+</body>
+</html>
