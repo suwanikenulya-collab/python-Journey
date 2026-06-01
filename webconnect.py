@@ -20,8 +20,10 @@ def about():
     if request.method == "POST":
         user_input = request.form.get('xss_input', '')
 
+
     return render_template("about.html", user_input=user_input)
 
 
 if __name__ == "__main__":
+
     app.run(debug=True)

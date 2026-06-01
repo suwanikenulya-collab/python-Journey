@@ -5,7 +5,8 @@ from flask import Flask
 # Define a function called main
 def main():
 
-    # Print the value of __name__
+    # Print the value of
+    # __name__
     # __name__ is a special Python variable
     # It tells whether the file is being run directly or imported
     print(f"File name {__name__}")
