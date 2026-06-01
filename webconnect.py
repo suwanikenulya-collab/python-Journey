@@ -24,6 +24,6 @@ def about():
     return render_template("about.html", user_input=user_input)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": #debugging
 
     app.run(debug=True)
