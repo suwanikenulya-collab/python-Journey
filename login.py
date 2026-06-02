@@ -76,6 +76,23 @@ class Login:
         self.password.insert(0, "Enter password")
         self.password.bind("<FocusIn>", self.clear_password)
 
+        # 🔥 Show Password Variable
+        self.show_password_var = IntVar()
+
+        # Show Password Checkbox
+        Checkbutton(
+            frame_login,
+            text="Show Password",
+            variable=self.show_password_var,
+            command=self.toggle_password,
+            bg="#25253a",
+            fg="white",
+            activebackground="#25253a",
+            activeforeground="white",
+            selectcolor="#25253a",
+            font=("Segoe UI", 10)
+        ).place(x=40, y=310)
+
         # Login Button
         Button(
             frame_login,
@@ -108,7 +125,14 @@ class Login:
     def clear_password(self, event):
         if self.password.get() == "Enter password":
             self.password.delete(0, END)
-            self.password.config(show="*", fg="black")
+            self.password.config(fg="black", show="*")
+
+    # 🔥 Toggle Password Visibility
+    def toggle_password(self):
+        if self.show_password_var.get() == 1:
+            self.password.config(show="")
+        else:
+            self.password.config(show="*")
 
     # Login Validation
     def check_function(self):
