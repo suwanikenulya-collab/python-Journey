@@ -105,15 +105,17 @@ class Login:
             command=self.check_function
         ).place(x=40, y=340, width=320, height=40)
 
-        # Forgot Password
-        Label(
+        # Forgot Password (CLICKABLE)
+        self.forgot_label = Label(
             frame_login,
             text="Forgot Password?",
             font=("Segoe UI", 10, "underline"),
             bg="#25253a",
             fg="#4a90e2",
             cursor="hand2"
-        ).place(x=135, y=400)
+        )
+        self.forgot_label.place(x=135, y=400)
+        self.forgot_label.bind("<Button-1>", self.forgot_password)
 
     # Username Placeholder
     def clear_username(self, event):
@@ -127,7 +129,7 @@ class Login:
             self.password.delete(0, END)
             self.password.config(fg="black", show="*")
 
-    # 🔥 Toggle Password Visibility
+    # 🔥 Show/Hide Password Toggle
     def toggle_password(self):
         if self.show_password_var.get() == 1:
             self.password.config(show="")
@@ -160,6 +162,14 @@ class Login:
                 "Invalid username or password!",
                 parent=self.root
             )
+
+    # Forgot Password
+    def forgot_password(self, event):
+        messagebox.showinfo(
+            "Password Recovery",
+            "Demo Feature:\n\nReset system not implemented yet.",
+            parent=self.root
+        )
 
 
 root = Tk()
