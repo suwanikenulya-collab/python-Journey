@@ -10,7 +10,8 @@ This repository contains my daily learning progress in Python, including:
 - Core programming concepts
 - Small practice exercises
 - Beginner-level projects
-- Hands-on experiments with scripting
+- Hands-on scripting experiments
+- Intermediate cybersecurity-related tools
 
 ---
 
@@ -25,29 +26,56 @@ This repository contains my daily learning progress in Python, including:
 ## 🛠️ Projects Built
 - 🧮 Calculator (basic arithmetic operations)
 - 🎲 Number Guessing Game (random module practice)
+- 🌐 Login Page (Flask basics + simple authentication concept)
+- 🔐 File Integrity Monitor (SHA-256 hashing + security logic)
+
+---
+
+## 🔐 Intermediate Projects
+
+- 🛡️ File Integrity Monitor (Cybersecurity Tool)
+  - Detects file creation, deletion, and modification
+  - Uses SHA-256 cryptographic hashing
+  - Maintains baseline snapshot for integrity comparison
+  - Simulates endpoint security monitoring concepts
 
 ---
 
 ## 💡 Hands-On / Experimental Projects
 - 🌐 Flask Intro App (basic web server + routing)
 - 🔗 Dynamic routes using `/hello/<name>`
-
+- 🔐 Login system implementation using Flask
+- 📁 File handling and automation scripts
 
 ---
 
 ## 🚀 Future Goals
-- 🔍 Port Scanner (network fundamentals + cybersecurity)
+- 🔍 Cybersecurity tools:
+  - Port Scanner
+  - Log Analyzer (SOC-style detection system)
+  - Advanced File Integrity Monitor (real-time monitoring)
 - 🤖 Automation scripts (file handling, system tasks)
-- 🌐 API development using Flask
-- ☁️ Cloud deployment (AWS basics)
+- 🌐 API development using Flask / FastAPI
+- ☁️ Cloud deployment (AWS basics & security tools)
 
 ---
 
 ## 🧠 What I’m Learning From This
-- Problem-solving with Python
-- Logic building through small projects
-- Basics of backend development
-- Foundation for cybersecurity scripting
+- Problem-solving using Python
+- Building real-world logic systems
+- Backend development fundamentals
+- Cybersecurity scripting foundations
+- System automation techniques
 
 ---
 
+## 📈 Recent Updates
+- Added Flask login page project (authentication basics)
+- Built file integrity monitoring system using SHA-256 hashing
+- Improved cybersecurity-focused project structure
+- Updated README to reflect intermediate progress
+
+---
+
+## 📌 Note
+This repository is continuously evolving as I learn new concepts and build more advanced projects in Python, cybersecurity, and automation.
