@@ -11,7 +11,7 @@ class QuotesSpider(scrapy.Spider):
 
     # List of websites where the spider should start
     start_urls = [
-        "https://quotes.toscrape.com/"
+        "https://en.wikipedia.org/wiki/Philosophy"
     ]
 
     # This method runs automatically when a page is downloaded
