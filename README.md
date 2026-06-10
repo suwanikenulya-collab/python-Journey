@@ -74,6 +74,7 @@ This repository contains my daily learning progress in Python, including:
 - Built file integrity monitoring system using SHA-256 hashing
 - Improved cybersecurity-focused project structure
 - Updated README to reflect intermediate progress
+- web crawler project
 
 ---
 
