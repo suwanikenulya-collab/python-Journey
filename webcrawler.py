@@ -7,7 +7,8 @@ class CrawlSpider(CrawlSpider):
     start_urls = ['http://quotes.toscrape.com/']
 
     rules = (
-        Rule(LinkExtractor(allow=r'/quotes/'), callback='parse_quote', follow=True),
+        Rule(LinkExtractor(allow=r'/quotes/')),
+        Rule(LinkExtractor(allow=r'/quotes/' , deny="category"), callback='parse_item', follow=True),
     )
 
 
